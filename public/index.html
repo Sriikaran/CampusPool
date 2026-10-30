@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CampusLoop helps students buy, borrow, lend and exchange useful campus essentials." />
+  <title>CampusLoop — Student Exchange Network</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="CampusLoop home"><span class="brand-mark">C</span><span>campus<span class="brand-accent">loop</span></span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#browse">Marketplace</a>
+      <a href="#list-item">List an Item</a>
+      <a href="#my-requests" id="nav-my-requests">My Requests</a>
+      <a href="#requests-received" id="nav-requests-received">Requests Received</a>
+    </nav>
+    <a class="button button-dark nav-cta" href="#list-item">+ List an item</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> MADE FOR YOUR CAMPUS</div>
+        <h1>Good stuff finds<br />a <span>second life.</span></h1>
+        <p class="hero-description">Buy, borrow, lend or exchange the things you need with people on your campus. Save money, share more.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#browse">Explore items <span aria-hidden="true">↗</span></a>
+          <a class="button button-light" href="#list-item">List something</a>
+        </div>
+        <div class="hero-note"><span class="avatar-stack"><i> S </i><i> A </i><i> R </i></span><span>Students helping students, one swap at a time.</span></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of books and study essentials">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-card art-card-book"><span class="art-emoji">📚</span><strong>Pass it on.</strong><small>Books & notes</small></div>
+        <div class="art-card art-card-calc"><span class="art-emoji">🧮</span><strong>Borrow smart.</strong><small>Tools & tech</small></div>
+        <div class="art-card art-card-lamp"><span class="art-emoji">🎧</span><strong>Share more.</strong><small>Campus essentials</small></div>
+        <div class="art-center"><span>♻</span><small>Reuse<br />together</small></div>
+        <span class="spark spark-one">✳</span><span class="spark spark-two">✦</span><span class="spark spark-three">✳</span>
+      </div>
+    </section>
+
+    <section class="stats-strip" aria-label="Marketplace statistics">
+      <div><strong id="stat-items">—</strong><span>items available</span></div>
+      <div><strong id="stat-categories">—</strong><span>item categories</span></div>
+      <div><strong>One</strong><span>campus community</span></div>
+    </section>
+
+    <section class="section browse-section" id="browse">
+      <div class="section-heading">
+        <div><div class="eyebrow">THE CAMPUS MARKETPLACE</div><h2>Find your next <span>favourite.</span></h2><p>Useful things, shared by people just around the corner.</p></div>
+        <a class="text-link" href="#list-item">Have something to share? <span>↗</span></a>
+      </div>
+      <div class="toolbar">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search books, calculators, electronics..." /></label>
+        <select id="category-filter" aria-label="Filter by category"><option value="All">All categories</option><option>Books</option><option>Electronics</option><option>Calculators</option><option>Lab Equipment</option><option>Other</option></select>
+        <select id="type-filter" aria-label="Filter by listing type"><option value="All">All types</option><option>Sell</option><option>Borrow</option><option>Exchange</option></select>
+      </div>
+      <div class="results-line"><span id="results-count">Loading items...</span><span class="available-label"><i></i> Available now</span></div>
+      <div id="items-grid" class="items-grid"><div class="empty-state">Loading campus listings...</div></div>
+    </section>
+
+    <section class="list-section" id="list-item">
+      <div class="list-intro"><div class="eyebrow">GIVE IT ANOTHER GO</div><h2>Got something<br />to <span>pass on?</span></h2><p>That textbook you finished? The calculator you barely use? Someone on campus might need it.</p><div class="list-decoration">↗</div></div>
+      <form id="item-form" class="listing-form">
+        <div class="form-heading"><h3>List an item</h3><p>Share a few details to get started.</p></div>
+        <div class="form-grid">
+          <label class="field full-field">Item name<input name="title" required maxlength="80" placeholder="e.g. Casio scientific calculator" /></label>
+          <label class="field">Category<select name="category" required><option value="">Choose category</option><option>Books</option><option>Electronics</option><option>Calculators</option><option>Lab Equipment</option><option>Other</option></select></label>
+          <label class="field">I want to<select name="listingType" required><option value="">Choose an option</option><option>Sell</option><option>Borrow</option><option>Exchange</option></select></label>
+          <label class="field">Condition<select name="condition"><option>Good</option><option>New</option><option>Like New</option><option>Fair</option></select></label>
+          <label class="field">Price (₹) <span class="field-hint">Use 0 if not applicable</span><input name="price" type="number" min="0" step="1" value="0" /></label>
+          <label class="field">Your name<input name="ownerName" required maxlength="60" placeholder="Your name" /></label>
+          <label class="field">College email<input name="ownerEmail" type="email" required placeholder="you@college.edu" /></label>
+          <label class="field full-field">Phone number <span class="field-hint">Private until request is accepted</span><input name="ownerPhone" type="tel" required maxlength="25" placeholder="e.g. +91 98765 43210" /></label>
+          <label class="field full-field">Description<textarea name="description" required maxlength="600" rows="3" placeholder="Tell other students about the item..."></textarea></label>
+        </div>
+        <button class="button button-dark submit-button" type="submit">Publish listing <span>↗</span></button>
+        <p class="form-message" id="item-form-message" role="status"></p>
+      </form>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="eyebrow">EASY AS ONE, TWO, THREE</div><h2>Sharing is <span>simple.</span></h2>
+      <div class="steps-grid">
+        <article class="step-card"><span class="step-number">01</span><div class="step-icon">🔎</div><h3>Find what you need</h3><p>Browse campus listings or search for a specific item.</p></article>
+        <article class="step-card"><span class="step-number">02</span><div class="step-icon">💬</div><h3>Send a request</h3><p>Tell the owner you're interested and share your contact details.</p></article>
+        <article class="step-card"><span class="step-number">03</span><div class="step-icon">🤝</div><h3>Make it happen</h3><p>Connect directly, agree on the details and enjoy the exchange.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">C</span><span>campus<span class="brand-accent">loop</span></span></a><p>A little less buying. A little more sharing.</p><span>Built for campus communities © 2026</span></footer>
+
+  <dialog id="request-dialog" class="request-dialog">
+    <form id="request-form" method="dialog">
+      <button class="dialog-close" type="button" id="close-dialog" aria-label="Close">×</button>
+      <div class="eyebrow">CONNECT WITH THE OWNER</div><h3>Request this item</h3><p id="request-item-title" class="request-item-title"></p>
+      <input type="hidden" name="itemId" />
+      <label class="field">Your name<input name="requesterName" required maxlength="60" placeholder="Your name" /></label>
+      <label class="field">Your email<input name="requesterEmail" type="email" required placeholder="you@college.edu" /></label>
+      <label class="field">Your phone number <span class="field-hint">Private until accepted</span><input name="requesterPhone" type="tel" required maxlength="25" placeholder="e.g. +91 98765 43210" /></label>
+      <label class="field">Message <span class="field-hint">Optional</span><textarea name="message" rows="3" maxlength="300" placeholder="Hi! I'm interested in this item..."></textarea></label>
+      <button class="button button-dark submit-button" type="submit">Send request <span>↗</span></button>
+      <p class="form-message" id="request-form-message" role="status"></p>
+    </form>
+  </dialog>
+
+  <dialog id="my-requests-dialog" class="request-dialog wide">
+    <button class="dialog-close" type="button" id="close-my-requests" aria-label="Close">×</button>
+    <div class="eyebrow">YOUR EXCHANGE ACTIVITY</div>
+    <h3>My Requests</h3>
+    <p class="request-item-title">Enter your student email to view the requests you've sent.</p>
+    <form id="track-requests-form">
+      <label class="field">College email<input id="track-email-input" type="email" required placeholder="you@college.edu" /></label>
+      <button class="button button-dark submit-button" type="submit">Lookup requests <span>↗</span></button>
+    </form>
+    <div id="my-requests-list" style="margin-top: 15px; max-height: 380px; overflow-y: auto;"></div>
+  </dialog>
+
+  <dialog id="requests-received-dialog" class="request-dialog wide">
+    <button class="dialog-close" type="button" id="close-requests-received" aria-label="Close">×</button>
+    <div class="eyebrow">INCOMING ITEM REQUESTS</div>
+    <h3>Requests Received</h3>
+    <p class="request-item-title">Enter your listing email to manage incoming requests for your items.</p>
+    <form id="owner-requests-form">
+      <label class="field">Listing owner email<input id="owner-email-input" type="email" required placeholder="owner@college.edu" /></label>
+      <button class="button button-dark submit-button" type="submit">View incoming requests <span>↗</span></button>
+    </form>
+    <div id="requests-received-list" style="margin-top: 15px; max-height: 380px; overflow-y: auto;"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
