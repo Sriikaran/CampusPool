@@ -313,6 +313,8 @@ For standard Docker deployment, no manual edits are necessary because `docker-co
 For comprehensive technical specifications, database schema diagrams, and endpoint lifecycle rules, see:
 📖 [Detailed Technical Documentation](docs/PROJECT_DETAILS.md)
 
+🎥 [Project Video Explanation](docs/CampusLoop_Project_Video_Explanation.mov)
+
 ---
 
 ## 18. Author & License
